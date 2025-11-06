@@ -1,0 +1,36 @@
+pipeline{
+    ageent any
+
+    stages{
+        stage("Server Details"){
+            steps{
+                echo "Server Details"
+            }
+        }
+        stage("CPU Details"){
+            steps{
+                sh 'lscpu'
+            }
+        }
+        stage("Memory details"){
+            steps{
+                sh 'free -h'
+            }
+        }
+        stage("Disk details"){
+            steps{
+                sh 'df -h'
+            }
+        }
+        stage("Network Details"){
+            steps{
+                sh 'ifconfig'
+            }
+        }
+        stage("IP Address Details"){
+            steps{
+                sh 'hostname -I'
+            }
+        }
+    }
+}
